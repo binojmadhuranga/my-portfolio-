@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body
+    class="font-sans bg-gradient-to-br from-[#0c1445] via-[#1a1a2e] to-[#16213e] text-[#e8d5ff] min-h-screen overflow-x-hidden">
+    <!-- Animated stars background -->
+    <div class="fixed inset-0 pointer-events-none z-0" id="stars"></div>
+
+    <!-- Floating planets -->
+    <div
+        class="fixed w-16 h-16 bg-gradient-to-br from-[#ff6b6b] to-[#4ecdc4] rounded-full top-[15%] left-[85%] animate-[float_8s_ease-in-out_infinite] z-10">
+    </div>
+    <div
+        class="fixed w-10 h-10 bg-gradient-to-br from-[#a8e6cf] to-[#3d5a80] rounded-full top-[60%] left-[10%] animate-[float_12s_ease-in-out_infinite_reverse] z-10">
+    </div>
+    <div
+        class="fixed w-20 h-20 bg-gradient-to-br from-[#ffd93d] to-[#ff8c42] rounded-full top-[80%] left-[80%] animate-[float_10s_ease-in-out_infinite] z-10">
+    </div>
+    <div
+        class="fixed w-8 h-8 bg-gradient-to-br from-[#8b5cf6] to-[#06ffa5] rounded-full top-[30%] left-[5%] animate-[float_15s_ease-in-out_infinite_reverse] z-10">
+    </div>
+
+
+
+    <nav
+        class="bg-gradient-to-b from-[rgba(13,20,69,0.95)] to-[rgba(13,20,69,0.75)] backdrop-blur-lg py-4 sm:py-8 md:py-8 fixed w-full z-50 border-b border-[rgba(79,172,254,0.3)] shadow-lg -mt-2">
+        <div class="max-w-6xl mx-auto flex justify-between items-center px-4">
+            <div class="text-xl font-bold bg-gradient-to-r from-[#4facfe] to-[#a855f7] text-transparent bg-clip-text">
+                <span class="brand-text">My Portfolio</span>
+            </div>
+            <div class="flex flex-col cursor-pointer absolute right-4 top-1/2 -translate-y-1/2 z-[101] md:hidden"
+                id="hamburger">
+                <span class="w-6 h-1 bg-[#4facfe] my-1 rounded transition-all duration-300"></span>
+                <span class="w-6 h-1 bg-[#4facfe] my-1 rounded transition-all duration-300"></span>
+                <span class="w-6 h-1 bg-[#4facfe] my-1 rounded transition-all duration-300"></span>
+            </div>
+            <ul class="nav-menu flex justify-center gap-10 md:flex hidden" id="nav-menu">
+                <li><button
+                        class="nav-link text-[#e8d5ff] text-lg font-medium px-4 py-2 rounded-full hover:bg-[rgba(79,172,254,0.2)] hover:text-[#00f2fe] hover:scale-105 hover:shadow-lg transition-all duration-300"
+                        data-section="home">Home</button></li>
+                <li><button
+                        class="nav-link text-[#e8d5ff] text-lg font-medium px-4 py-2 rounded-full hover:bg-[rgba(79,172,254,0.2)] hover:text-[#00f2fe] hover:scale-105 hover:shadow-lg transition-all duration-300"
+                        data-section="about">About</button></li>
+                <li><button
+                        class="nav-link text-[#e8d5ff] text-lg font-medium px-4 py-2 rounded-full hover:bg-[rgba(79,172,254,0.2)] hover:text-[#00f2fe] hover:scale-105 hover:shadow-lg transition-all duration-300"
+                        data-section="skills">Skills</button></li>
+                <li><button
+                        class="nav-link text-[#e8d5ff] text-lg font-medium px-4 py-2 rounded-full hover:bg-[rgba(79,172,254,0.2)] hover:text-[#00f2fe] hover:scale-105 hover:shadow-lg transition-all duration-300"
+                        data-section="projects">Projects</button></li>
+                <li><button
+                        class="nav-link text-[#e8d5ff] text-lg font-medium px-4 py-2 rounded-full hover:bg-[rgba(79,172,254,0.2)] hover:text-[#00f2fe] hover:scale-105 hover:shadow-lg transition-all duration-300"
+                        data-section="contact">Contact</button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section id="home"
+            class="text-center py-24 px-4 bg-gradient-to-br from-[rgba(13,20,69,0.4)] to-[rgba(26,26,46,0.2)] backdrop-blur-md mx-4 my-8 rounded-3xl border border-[rgba(79,172,254,0.2)] relative overflow-hidden z-10">
+            <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-center gap-12">
+                <div class="relative">
+                    <div class="w-80 h-80 md:w-80 md:h-80 sm:w-64 sm:h-64">
+                        <img src="/assets/pp.jpg" alt="Profile"
+                            class="w-full h-full rounded-full object-cover border-4 border-[rgba(79,172,254,0.5)] hover:border-[#4facfe] hover:scale-105 transition-all duration-300">
+                        <div
+                            class="absolute inset-0 rounded-full shadow-[0_0_20px_rgba(79,172,254,0.7)] opacity-0 hover:opacity-100 transition-opacity duration-300">
+                        </div>
+                    </div>
+                </div>
+                <div class="text-left">
+                    <h1 class="text-5xl font-bold flex flex-col gap-3">
+                        <span class="text-2xl sm:text-2xl md:text-3xl">Hello, I'm</span>
+                        <span
+                            class="bg-gradient-to-r from-[#4facfe] via-[#a855f7] to-[#00f2fe] text-transparent bg-clip-text text-4xl sm:text-4xl md:text-6xl z-20 relative">Binoj
+                            Madhuranga</span>
+                        <span class="title-role">
+                            <span class="animated-text inline-block relative z-20" id="typing-text"></span>
+                        </span>
+                    </h1>
+                    <p
+                        class="text-base sm:text-base md:text-lg leading-relaxed text-[#c8a7ff] opacity-90 mt-6 max-w-xl z-20 relative">
+                        Passionate about creating exceptional digital experiences with cutting-edge technologies.
+                        I transform ideas into beautiful, functional web applications.
+                    </p>
+                    <div class="flex gap-4 mt-6">
+                        <button
+                            class="cta-button px-4 py-2 sm:px-4 sm:py-2 md:px-6 md:py-3 bg-gradient-to-r from-[#4facfe] via-[#a855f7] to-[#00f2fe] text-white text-sm sm:text-sm md:text-base rounded-full hover:-translate-y-1 hover:shadow-xl transition-all duration-300 relative overflow-hidden z-20"
+                            data-section="about">
+                            <span>Discover About Me</span>
+                            <div
+                                class="absolute inset-0 bg-[radial-gradient(circle,rgba(79,172,254,0.3),transparent)] opacity-0 hover:opacity-100 transition-opacity duration-300">
+                            </div>
+                        </button>
+                        <a href="/assets/Sample_CV.pdf" download
+                            class="px-4 py-2 sm:px-4 sm:py-2 md:px-6 md:py-3 bg-gradient-to-r from-[#4facfe] via-[#a855f7] to-[#00f2fe] text-white text-sm sm:text-sm md:text-base rounded-full hover:-translate-y-1 hover:shadow-xl transition-all duration-300 relative overflow-hidden z-20">
+                            <span>Download CV</span>
+                            <div
+                                class="absolute inset-0 bg-[radial-gradient(circle,rgba(79,172,254,0.3),transparent)] opacity-0 hover:opacity-100 transition-opacity duration-300">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about"
+            class="py-16 px-4 mx-4 my-8 bg-[rgba(13,20,69,0.3)] backdrop-blur-md rounded-3xl border border-[rgba(255,255,255,0.1)] relative z-10">
+            <div class="max-w-6xl mx-auto">
+                <h2
+                    class="text-4xl font-bold text-center bg-gradient-to-r from-[#4facfe] via-[#a855f7] to-[#00f2fe] text-transparent bg-clip-text mb-8">
+                    About Me</h2>
+                <div class="flex flex-col items-center gap-6 max-w-2xl mx-auto text-center">
+                    <p class="text-lg leading-relaxed text-[#c8a7ff] opacity-90">
+                        I'm a passionate Fullstack Engineer and AI enthusiast, crafting innovative digital solutions.
+                        Skilled in React, Node.js, Spring Boot, Python, and databases like MySQL and MongoDB, I
+                        specialize in building scalable web applications and exploring machine learning. Let's create
+                        something extraordinary together!
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills"
+            class="py-16 px-4 mx-4 my-8 bg-[rgba(13,20,69,0.3)] backdrop-blur-md rounded-3xl border border-[rgba(255,255,255,0.1)] relative z-10">
+            <div class="max-w-6xl mx-auto">
+                <h2
+                    class="text-4xl font-bold text-center bg-gradient-to-r from-[#4facfe] via-[#a855f7] to-[#00f2fe] text-transparent bg-clip-text mb-8">
+                    Tech Stack</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+                    <!-- Frontend -->
+                    <div
+                        class="bg-[rgba(26,26,46,0.6)] p-6 rounded-2xl border border-[rgba(79,172,254,0.3)] hover:-translate-y-1 hover:shadow-xl hover:border-[#4facfe] transition-all duration-300 relative overflow-hidden">
+                        <h3 class="text-2xl font-semibold text-[#a855f7] mb-6 text-center">Frontend</h3>
+                        <div class="flex flex-col gap-4">
+                            <div class="opacity-0 translate-y-5 animate-[slideIn_0.5s_ease-out_forwards]">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-[#e8d5ff] font-semibold">HTML5</span>
+                                    <span class="text-[#9f7aea] text-sm">92%</span>
+                                </div>
+                                <div class="w-full h-2 bg-[rgba(255,255,255,0.1)] rounded overflow-hidden">
+                                    <div
+                                        class="h-full bg-gradient-to-r from-[#4facfe] to-[#a855f7] w-[92%] transition-all duration-1000">
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                class="opacity-0 translate-y-5 animate-[slideIn_0.5s_ease-out_forwards] [animation-delay:0.1s]">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-[#e8d5ff] font-semibold">CSS3</span>
+                                    <span class="text-[#9f7aea] text-sm">90%</span>
+                                </div>
+                                <div class="w-full h-2 bg-[rgba(255,255,255,0.1)] rounded overflow-hidden">
+                                    <div
+                                        class="h-full bg-gradient-to-r from-[#4facfe] to-[#a855f7] w-[90%] transition-all duration-1000">
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                class="opacity-0 translate-y-5 animate-[slideIn_0.5s_ease-out_forwards] [animation-delay:0.2s]">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-[#e8d5ff] font-semibold">JavaScript</span>
+                                    <span class="text-[#9f7aea] text-sm">88%</span>
+                                </div>
+                                <div class="w-full h-2 bg-[rgba(255,255,255,0.1)] rounded overflow-hidden">
+                                    <div
+                                        class="h-full bg-gradient-to-r from-[#4facfe] to-[#a855f7] w-[88%] transition-all duration-1000">
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                class="opacity-0 translate-y-5 animate-[slideIn_0.5s_ease-out_forwards] [animation-delay:0.3s]">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-[#e8d5ff] font-semibold">React</span>
+                                    <span class="text-[#9f7aea] text-sm">84%</span>
+                                </div>
+                                <div class="w-full h-2 bg-[rgba(255,255,255,0.1)] rounded overflow-hidden">
+                                    <div
+                                        class="h-full bg-gradient-to-r from-[#4facfe] to-[#a855f7] w-[84%] transition-all duration-1000">
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                class="opacity-0 translate-y-5 animate-[slideIn_0.5s_ease-out_forwards] [animation-delay:0.3s]">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-[#e8d5ff] font-semibold">React Native</span>
+                                    <span class="text-[#9f7aea] text-sm">80%</span>
+                                </div>
+                                <div class="w-full h-2 bg-[rgba(255,255,255,0.1)] rounded overflow-hidden">
+                                    <div
+                                        class="h-full bg-gradient-to-r from-[#4facfe] to-[#a855f7] w-[80%] transition-all duration-1000">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Backend -->
+                    <div
+                        class="bg-[rgba(26,26,46,0.6)] p-6 rounded-2xl border border-[rgba(79,172,254,0.3)] hover:-translate-y-1 hover:shadow-xl hover:border-[#4facfe] transition-all duration-300 relative overflow-hidden">
+                        <h3 class="text-2xl font-semibold text-[#a855f7] mb-6 text-center">Backend</h3>
+                        <div class="flex flex-col gap-4">
+                            <div class="opacity-0 translate-y-5 animate-[slideIn_0.5s_ease-out_forwards]">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-[#e8d5ff] font-semibold">Java</span>
+                                    <span class="text-[#9f7aea] text-sm">90%</span>
+                                </div>
+                                <div class="w-full h-2 bg-[rgba(255,255,255,0.1)] rounded overflow-hidden">
+                                    <div
+                                        class="h-full bg-gradient-to-r from-[#4facfe] to-[#a855f7] w-[90%] transition-all duration-1000">
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                class="opacity-0 translate-y-5 animate-[slideIn_0.5s_ease-out_forwards] [animation-delay:0.1s]">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-[#e8d5ff] font-semibold">Spring Boot</span>
+                                    <span class="text-[#9f7aea] text-sm">90%</span>
+                                </div>
+                                <div class="w-full h-2 bg-[rgba(255,255,255,0.1)] rounded overflow-hidden">
+                                    <div
+                                        class="h-full bg-gradient-to-r from-[#4facfe] to-[#a855f7] w-[90%] transition-all duration-1000">
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                class="opacity-0 translate-y-5 animate-[slideIn_0.5s_ease-out_forwards] [animation-delay:0.2s]">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-[#e8d5ff] font-semibold">Phython</span>
+                                    <span class="text-[#9f7aea] text-sm">75%</span>
+                                </div>
+                                <div class="w-full h-2 bg-[rgba(255,255,255,0.1)] rounded overflow-hidden">
+                                    <div
+                                        class="h-full bg-gradient-to-r from-[#4facfe] to-[#a855f7] w-[90%] transition-all duration-1000">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Database -->
+                    <div
+                        class="bg-[rgba(26,26,46,0.6)] p-6 rounded-2xl border border-[rgba(79,172,254,0.3)] hover:-translate-y-1 hover:shadow-xl hover:border-[#4facfe] transition-all duration-300 relative overflow-hidden">
+                        <h3 class="text-2xl font-semibold text-[#a855f7] mb-6 text-center">Database</h3>
+                        <div class="flex flex-col gap-4">
+                            <div class="opacity-0 translate-y-5 animate-[slideIn_0.5s_ease-out_forwards]">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-[#e8d5ff] font-semibold">MySQL</span>
+                                    <span class="text-[#9f7aea] text-sm">85%</span>
+                                </div>
+                                <div class="w-full h-2 bg-[rgba(255,255,255,0.1)] rounded overflow-hidden">
+                                    <div
+                                        class="h-full bg-gradient-to-r from-[#4facfe] to-[#a855f7] w-[85%] transition-all duration-1000">
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                class="opacity-0 translate-y-5 animate-[slideIn_0.5s_ease-out_forwards] [animation-delay:0.1s]">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-[#e8d5ff] font-semibold">MongoDB</span>
+                                    <span class="text-[#9f7aea] text-sm">80%</span>
+                                </div>
+                                <div class="w-full h-2 bg-[rgba(255,255,255,0.1)] rounded overflow-hidden">
+                                    <div
+                                        class="h-full bg-gradient-to-r from-[#4facfe] to-[#a855f7] w-[80%] transition-all duration-1000">
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                class="opacity-0 translate-y-5 animate-[slideIn_0.5s_ease-out_forwards] [animation-delay:0.2s]">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-[#e8d5ff] font-semibold">PostgreSQL</span>
+                                    <span class="text-[#9f7aea] text-sm">75%</span>
+                                </div>
+                                <div class="w-full h-2 bg-[rgba(255,255,255,0.1)] rounded overflow-hidden">
+                                    <div
+                                        class="h-full bg-gradient-to-r from-[#4facfe] to-[#a855f7] w-[75%] transition-all duration-1000">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Others -->
+                    <div
+                        class="bg-[rgba(26,26,46,0.6)] p-6 rounded-2xl border border-[rgba(79,172,254,0.3)] hover:-translate-y-1 hover:shadow-xl hover:border-[#4facfe] transition-all duration-300 relative overflow-hidden">
+                        <h3 class="text-2xl font-semibold text-[#a855f7] mb-6 text-center">Others</h3>
+                        <div class="flex flex-col gap-4">
+                            <div class="opacity-0 translate-y-5 animate-[slideIn_0.5s_ease-out_forwards]">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-[#e8d5ff] font-semibold">AWS</span>
+                                    <span class="text-[#9f7aea] text-sm">70%</span>
+                                </div>
+                                <div class="w-full h-2 bg-[rgba(255,255,255,0.1)] rounded overflow-hidden">
+                                    <div
+                                        class="h-full bg-gradient-to-r from-[#4facfe] to-[#a855f7] w-[70%] transition-all duration-1000">
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                class="opacity-0 translate-y-5 animate-[slideIn_0.5s_ease-out_forwards] [animation-delay:0.1s]">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-[#e8d5ff] font-semibold">Docker</span>
+                                    <span class="text-[#9f7aea] text-sm">65%</span>
+                                </div>
+                                <div class="w-full h-2 bg-[rgba(255,255,255,0.1)] rounded overflow-hidden">
+                                    <div
+                                        class="h-full bg-gradient-to-r from-[#4facfe] to-[#a855f7] w-[65%] transition-all duration-1000">
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                class="opacity-0 translate-y-5 animate-[slideIn_0.5s_ease-out_forwards] [animation-delay:0.2s]">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-[#e8d5ff] font-semibold">TensorFlow</span>
+                                    <span class="text-[#9f7aea] text-sm">60%</span>
+                                </div>
+                                <div class="w-full h-2 bg-[rgba(255,255,255,0.1)] rounded overflow-hidden">
+                                    <div
+                                        class="h-full bg-gradient-to-r from-[#4facfe] to-[#a855f7] w-[60%] transition-all duration-1000">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects"
+            class="py-16 px-4 mx-4 my-8 bg-[rgba(13,20,69,0.3)] backdrop-blur-md rounded-3xl border border-[rgba(255,255,255,0.1)] relative z-10">
+            <h2
+                class="text-4xl font-bold text-center bg-gradient-to-r from-[#4facfe] via-[#a855f7] to-[#00f2fe] text-transparent bg-clip-text mb-8">
+                Featured Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+                <div
+                    class="bg-[rgba(26,26,46,0.6)] rounded-2xl border border-[rgba(79,172,254,0.3)] hover:-translate-y-1 hover:shadow-xl transition-all duration-300 overflow-hidden">
+                    <div
+                        class="h-48 bg-gradient-to-r from-[#667eea] to-[#764ba2] flex items-center justify-center text-5xl text-white">
+                        🌍</div>
+                    <div class="p-6">
+                        <h3 class="text-xl text-[#b794f6] mb-4">Planetary Explorer</h3>
+                        <p class="text-[#c8a7ff] opacity-90">An interactive web application that allows users to explore
+                            planets in our solar system with 3D visualizations and real astronomical data.</p>
+                    </div>
+                </div>
+                <div
+                    class="bg-[rgba(26,26,46,0.6)] rounded-2xl border border-[rgba(79,172,254,0.3)] hover:-translate-y-1 hover:shadow-xl transition-all duration-300 overflow-hidden">
+                    <div
+                        class="h-48 bg-gradient-to-r from-[#667eea] to-[#764ba2] flex items-center justify-center text-5xl text-white">
+                        🛸</div>
+                    <div class="p-6">
+                        <h3 class="text-xl text-[#b794f6] mb-4">Space Mission Control</h3>
+                        <p class="text-[#c8a7ff] opacity-90">A comprehensive dashboard for managing space missions,
+                            featuring real-time telemetry, crew management, and mission planning tools.</p>
+                    </div>
+                </div>
+                <div
+                    class="bg-[rgba(26,26,46,0.6)] rounded-2xl border border-[rgba(79,172,254,0.3)] hover:-translate-y-1 hover:shadow-xl transition-all duration-300 overflow-hidden">
+                    <div
+                        class="h-48 bg-gradient-to-r from-[#667eea] to-[#764ba2] flex items-center justify-center text-5xl text-white">
+                        ⭐</div>
+                    <div class="p-6">
+                        <h3 class="text-xl text-[#b794f6] mb-4">Stellar Marketplace</h3>
+                        <p class="text-[#c8a7ff] opacity-90">E-commerce platform with advanced features including
+                            AI-powered recommendations, real-time inventory, and seamless payment integration.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact"
+            class="py-16 px-4 mx-4 my-8 bg-[rgba(13,20,69,0.3)] backdrop-blur-md rounded-3xl border border-[rgba(255,255,255,0.1)] relative z-10">
+            <div class="max-w-6xl mx-auto">
+                <h2
+                    class="text-4xl font-bold text-center bg-gradient-to-r from-[#4facfe] via-[#a855f7] to-[#00f2fe] text-transparent bg-clip-text mb-8">
+                    Let's Connect</h2>
+                <div class="flex flex-col items-center gap-12">
+                    <p class="text-center text-lg leading-relaxed max-w-2xl text-[#c8a7ff] opacity-90">
+                        Ready to bring your next project to life? I'm always excited to collaborate
+                        on innovative solutions and discuss new opportunities. Let's create something amazing together!
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-4xl">
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=binojmadhuranga2002.04.04@gmail.com"
+                            target="_blank" rel="noopener noreferrer"
+                            class="flex items-center gap-4 p-2 sm:p-3 md:p-4 bg-[rgba(26,26,46,0.6)] border border-[rgba(79,172,254,0.3)] rounded-2xl hover:-translate-y-1 hover:shadow-xl hover:border-[#4facfe] transition-all duration-300 relative overflow-hidden">
+                            <div
+                                class="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center bg-gradient-to-r from-[#4facfe] to-[#a855f7] text-white hover:bg-gradient-to-r hover:from-[#ff6b6b] hover:to-[#4ecdc4]">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                    <polyline points="22,6 12,13 2,6" />
+                                </svg>
+                            </div>
+                            <div class="flex flex-col gap-1">
+                                <span class="text-xs sm:text-xs md:text-sm text-[#9f7aea] font-semibold">Email</span>
+                                <span
+                                    class="text-[#e8d5ff] text-xs sm:text-xs md:text-base">binojmadhuranga2002.04.04@gmail.com</span>
+                            </div>
+                        </a>
+                        <a href="https://www.linkedin.com/in/binoj-madhuranga/" target="_blank"
+                            rel="noopener noreferrer"
+                            class="flex items-center gap-4 p-2 sm:p-3 md:p-4 bg-[rgba(26,26,46,0.6)] border border-[rgba(79,172,254,0.3)] rounded-2xl hover:-translate-y-1 hover:shadow-xl hover:border-[#4facfe] transition-all duration-300 relative overflow-hidden">
+                            <div
+                                class="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center bg-gradient-to-r from-[#4facfe] to-[#a855f7] text-white hover:bg-gradient-to-r hover:from-[#0077b5] hover:to-[#00a0dc]">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                                    <rect x="2" y="9" width="4" height="12" />
+                                    <circle cx="4" cy="4" r="2" />
+                                </svg>
+                            </div>
+                            <div class="flex flex-col gap-1">
+                                <span class="text-xs sm:text-xs md:text-sm text-[#9f7aea] font-semibold">LinkedIn</span>
+                                <span class="text-[#e8d5ff] text-xs sm:text-xs md:text-base">Connect with me</span>
+                            </div>
+                        </a>
+                        <a href="https://github.com/binojmadhuranga" target="_blank" rel="noopener noreferrer"
+                            class="flex items-center gap-4 p-2 sm:p-3 md:p-4 bg-[rgba(26,26,46,0.6)] border border-[rgba(79,172,254,0.3)] rounded-2xl hover:-translate-y-1 hover:shadow-xl hover:border-[#4facfe] transition-all duration-300 relative overflow-hidden">
+                            <div
+                                class="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center bg-gradient-to-r from-[#4facfe] to-[#a855f7] text-white hover:bg-gradient-to-r hover:from-[#333] hover:to-[#666]">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+                                </svg>
+                            </div>
+                            <div class="flex flex-col gap-1">
+                                <span class="text-xs sm:text-xs md:text-sm text-[#9f7aea] font-semibold">GitHub</span>
+                                <span class="text-[#e8d5ff] text-xs sm:text-xs md:text-base">View my projects</span>
+                            </div>
+                        </a>
+                        <a href="tel:+1234567890"
+                            class="flex items-center gap-4 p-2 sm:p-3 md:p-4 bg-[rgba(26,26,46,0.6)] border border-[rgba(79,172,254,0.3)] rounded-2xl hover:-translate-y-1 hover:shadow-xl hover:border-[#4facfe] transition-all duration-300 relative overflow-hidden">
+                            <div
+                                class="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center bg-gradient-to-r from-[#4facfe] to-[#a855f7] text-white hover:bg-gradient-to-r hover:from-[#10b981] hover:to-[#34d399]">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                                </svg>
+                            </div>
+                            <div class="flex flex-col gap-1">
+                                <span class="text-xs sm:text-xs md:text-sm text-[#9f7aea] font-semibold">Phone</span>
+                                <span class="text-[#e8d5ff] text-xs sm:text-xs md:text-base">+94 76 3546936</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div
+                        class="text-center bg-[rgba(26,26,46,0.4)] p-6 rounded-2xl border border-[rgba(168,85,247,0.2)] max-w-md w-full">
+                        <p class="text-lg text-[#c8a7ff] mb-4">Available for freelance projects and full-time
+                            opportunities</p>
+                        <div class="flex items-center justify-center gap-2 text-sm text-[#10b981]">
+                            <div class="w-3 h-3 rounded-full bg-[#10b981] animate-[pulse_2s_infinite]"></div>
+                            <span>Currently available</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center py-8 bg-[rgba(13,20,69,0.8)] mt-8 relative z-10">
+        <p>© 2025 BINOJ Madhuranga. Built with using HTML , Tailwind CSS & JavaScript.
+        </p>
+    </footer>
+
+    <style>
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            25% {
+                transform: translateY(-20px) rotate(90deg);
+            }
+
+            50% {
+                transform: translateY(-40px) rotate(180deg);
+            }
+
+            75% {
+                transform: translateY(-20px) rotate(270deg);
+            }
+        }
+
+        @keyframes slideIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+            }
+
+            70% {
+                box-shadow: 0 0 0 10px rgba(16, 185, 129, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+            }
+        }
+
+        @keyframes blink {
+
+            0%,
+            50% {
+                opacity: 1;
+            }
+
+            51%,
+            100% {
+                opacity: 0;
+            }
+        }
+
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: #ffffff;
+            border-radius: 50%;
+            animation: twinkle 3s infinite alternate;
+        }
+
+        @keyframes twinkle {
+            0% {
+                opacity: 0.3;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .animated-text::after {
+            content: '|';
+            position: absolute;
+            right: -10px;
+            animation: blink 0.5s step-end infinite;
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 80px;
+                flex-direction: column;
+                background: rgba(13, 20, 69, 0.95);
+                backdrop-filter: blur(10px);
+                width: 100%;
+                text-align: center;
+                transition: left 0.3s;
+                box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+                padding: 2rem 0;
+                gap: 1rem;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .hamburger.active span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+
+            .hamburger.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(7px, -6px);
+            }
+        }
+
+        #home {
+
+            margin-top: 100px;
+
+        }
+
+        nav {
+            top: 10px;
+        }
+    </style>
+
+    <script src="/index.js"> </script>
+</body>
+
+</html>
