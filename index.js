@@ -18,7 +18,6 @@
                 activeSection = sectionId;
                 updateActiveNavLink();
             }
-            
         }
 
         function updateActiveNavLink() {
